@@ -17,9 +17,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var _questionIndex = 0;
-  var _totalScore;
-
   final _questions = const [
     {
       'questionText': 'Whats your favorite color?',
@@ -70,19 +67,22 @@ class _MyAppState extends State<MyApp> {
     },
   ];
 
+  var _questionIndex = 0;
+  var _totalScore = 0;
+
   void _answerQuestion(int score) {
     _totalScore += score;
 
-    if (_questionIndex < _questions.length) {
-      print('We have more _questions!');
-    } else {
-      print('No _questions left');
-    }
     setState(() {
       _questionIndex++;
     });
     print('Answer Choosen');
     print(_questionIndex);
+    if (_questionIndex < _questions.length) {
+      print('We have more _questions!');
+    } else {
+      print('No _questions left');
+    }
   }
 
   @override
@@ -90,7 +90,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text("QUIZ"),
+            title: Text("The Brainy Cult "),
           ),
           body: _questionIndex < _questions.length
               ? Quiz(
