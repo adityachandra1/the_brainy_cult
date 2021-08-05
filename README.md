@@ -1,4 +1,4 @@
-# the_brainy_cult
+# The Brainy Cult
 
 A quiz app that tests your Aptitude skills.
 
